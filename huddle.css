@@ -1,0 +1,376 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background: url('images/bg-hero-mobile.svg') no-repeat, linear-gradient(180deg, #4af 0%, #fff 19%);
+    background-size: contain;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #002533;
+    font-weight: 600;
+    text-align: center;
+    font-size: 19px;
+}
+h1 {
+    margin: 0px;
+    color: #002533;
+    font-size: 28px;
+    padding-bottom: 10px;
+}
+h3 {
+    color: #002533;
+    font-size: 20px;
+}
+button {
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    transition: color 1s ease;
+    color: #2cf;
+}
+a:focus {
+    outline: none;
+    box-shadow: inset 0 -2px 0 dodgerblue;
+}
+.header {
+    padding: 30px 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.header > img {
+    height: 22px;
+}
+.header button {
+   height: 30px;
+   width: 120px;
+   background-color: #fff;
+   box-shadow: -2px 5px 8px rgba(0,0,0,0.19);
+   color: #002533;
+   font-weight: 900;
+   font-size: 12px;
+   transition: background-color 2s ease;
+}
+.header button:hover {
+    transition: background-color 2s ease;
+    background: #f2d;
+}
+.header button:focus {
+    outline: none;
+    background: dodgerblue;
+}
+article {
+    padding: 30px 15px;
+}
+.section-one img {
+    padding: 0 20px;
+    width: calc(100% - 40px);
+}
+.section-one button, .section-three button {
+    color: #fff;
+    width: 200px;
+    font-weight: 700;
+    padding: 12px;
+    background: #f0d;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    transition: width 1s ease-out;
+}
+.section-one button:hover, .section-three button:hover {
+    transition: width 1s ease-out;
+    width: 250px;
+}
+.section-one button:focus, .section-three button:focus {
+    outline: none;
+    background: #2cf;
+}
+.section-one button {
+    margin: 20px 0 50px 0;
+}
+.section-two {
+    margin-top: 80px;
+    color: #999;
+    font-size: 20px;
+}
+.section-two img {
+    width: 100%;
+}
+.section-two section {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    padding: 60px 20px 20px 20px;
+    border-radius: 15px;
+    margin-bottom: 50px;
+}
+.section-three {
+    position: relative;
+    background-color: #fff;
+    top: 80px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    padding: 30px 10px 50px 10px;
+    margin: 10px;
+}
+.section-three h1 {
+    margin-bottom: 20px;
+}
+footer {
+    background-color: #002533;
+    color: #fff;
+    font-weight: 400;
+    padding: 120px 10px 80px 20px;
+    text-align: left;
+    font-size: 16px;
+}
+footer > div img {
+    height: 30px;
+}
+.footer-icon {
+    display: flex;
+    margin: 30px 0;
+}
+.footer-icon img {
+    height: 15px;
+    margin-right: 10px;
+    margin-top: 7px;
+    align-content: center;
+}
+.footer-navlinks div{
+    font-size: 22px;
+    padding: 20px 0;
+}
+.socialmedia-links {
+    text-align: center;
+    margin: 50px 30px 30px 30px;
+}
+.socialmedia-links a {
+    padding: 5px 12px;
+    margin: 5px;
+    border-radius: 50px;
+    border: 1px solid #fff;
+}
+.socialmedia-links a:first-child {
+    padding: 5px 8px;
+}
+.socialmedia-links a:last-child {
+    padding: 5px 9px;
+}
+.copyright {
+    padding-top: 30px;
+    text-align: center;
+    font-size: 13px;
+}
+/* styling for modal component (login form for mobile view) */
+.modal-login {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+.form {
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    padding: 50px;
+    background: #fff;
+    text-align: left;
+    border-radius: 10px;
+}
+label {
+    display: block;
+}
+.modal-login button {
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
+    margin-top: 20px;
+}
+.modal-login button:first-of-type {
+    background-color: rgb(6, 155, 6);
+}
+.modal-login button:first-of-type:focus,.modal-login button:first-of-type:hover {
+    outline: none;
+    border: 2px solid rgb(6, 155, 6);
+}
+.modal-login button:last-of-type {
+    background-color: rgb(236, 11, 50);
+}
+.modal-login button:last-of-type:focus, .modal-login button:last-of-type:hover {
+    outline: none;
+    border: 2px solid rgb(236, 11, 50);
+}
+.cancel {
+    background: rgb(236, 11, 50);
+    padding: 0px 10px 3px 10px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+.cancel:hover {
+    color: #fff;
+}
+input {
+    outline: none;
+    width: 80%;
+    border: none;
+    border-bottom: 2px solid dodgerblue;
+    padding: 13px;
+}
+.message {
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 13px;
+}
+.hide {
+    display: none;
+}
+@media (min-width: 576px) {
+ .form {
+     left: 100px;
+ }
+}
+
+@media (min-width: 768px) {
+    .form {
+        left: 200px;
+    }
+}
+
+@media (min-width: 992px) {
+    body {
+        background: url('images/bg-hero-desktop.svg') no-repeat, linear-gradient(180deg, #4af 0%, #fff 22%);
+        font-size: 14px;
+    }
+    .header {
+        padding: 60px 80px;
+    }
+    .header img {
+        height: 35px;
+    }
+    .header button {
+        height: 50px;
+        width: 200px;
+        font-size: 16px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    h3 {
+        font-size: 30px;
+    }
+    article {
+        padding: 60px 80px 0 80px;
+    }
+    .section-one {
+        text-align: left;
+        display: flex;
+        align-items: center;
+    }
+    .section-one img {
+        margin-left: 60px;
+        width: 60%;
+    }
+    .section-one button {
+        padding: 18px;
+        width: 250px;
+        border-radius: 40px;
+        transition: width 1s ease-out;
+    }
+    .section-one button:hover {
+        transition: width 1s ease-out;
+        width: 300px;
+    }
+    .section-two {
+        margin-top: 200px;
+        text-align: left;
+    }
+    .section-two section {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        padding: 80px;
+    }
+    .section-two img {
+        width: 400px;
+        margin-left: 100px;
+    }
+    .section-three {
+        width: 50%;
+        padding: 50px 50px 100px 50px;
+        margin: 0 auto;
+        top: 150px;
+    }
+    .section-three h3 {
+        font-size: 40px;
+    }
+    .section-three button {
+        width: 500px;
+        border-radius: 80px;
+        padding: 30px;
+        font-size: 21px;
+        transition: width 1s ease-out;
+    }
+    .section-three button:hover {
+        transition: width 1s ease-out;
+        width: 400px;
+    }
+    footer {
+        padding: 240px 60px 80px 100px;
+    }
+    footer > section {
+        display: flex;
+        justify-content: space-between;
+    }
+    footer > section > section {
+        width: 400px;
+    }
+    .footer-navlinks {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin: 20px 0;
+        height: 150px;
+    }
+    .footer-navlinks div {
+        font-size: 18px;
+        padding: 10px;
+    }
+    .socialmedia-links {
+        width: 350px;
+        text-align: left;
+        display: flex;
+        height: 250px;
+        margin: 0;
+        margin-top: 30px;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .copyright {
+        text-align: inherit;
+        padding-top: none;
+        font-size: 15px;
+    }
+    /* styling for modal component */
+    .form {
+        width: 500px;
+        top: 200px;
+        left: 200px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .section-two img {
+        margin-left: 200px;
+    }
+    /* styling for the modal component desktop view */
+    .form {
+        left: 30%;
+    }
+    .message {
+        font-size: 17px;
+    }
+}

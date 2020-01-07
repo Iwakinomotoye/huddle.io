@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Huddle</title>
+    <link rel="icon" href="images/favicon-32x32.png">
+    <link rel="stylesheet" href="huddle.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+<body>
+    <main>
+        <header class="header">
+            <img src="images/logo.svg" alt="huddle">
+            <div>
+                <button id="loginBtn">Login</button>
+            </div>
+        </header>
+        <section id="modal" class="modal-login hide">
+                <form action="" id="form" class="form" autocomplete="off">
+                    <span class="cancel" id="cancel">x</span>
+                    <label for="username">Username:</label>
+                    <input type="username" id="username" placeholder="Enter Username"
+                        required>
+                    <div class="message">
+                        <span data-rule="valueMissing" class="hide">
+                            Username field is required.
+                        </span>
+                    </div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" placeholder="Enter Password"
+                    required>
+                    <div class="message">
+                        <span data-rule="valueMissing" class="hide">
+                            Password field is required.
+                        </span>
+                    </div>
+                    <button type="submit">Submit</button>
+                    <button id="cancel">Cancel</button>
+                </form>
+        </section>
+        <article>
+            <section class="section-one">
+                <div>
+                    <h1>Build The Community Your Fans Will Love</h1>
+                    <p>
+                        Huddle re-imagines the way we build communities. You have a voice,
+                        but so does you audience, Create connections with your users as you 
+                        engage in genuine discussions.
+                    </p>
+                    <button>Get Started For Free</button>
+                </div>
+                <img src="images/illustration-mockups.svg" alt="illustration-mockup">
+            </section>
+            <section class="section-two">
+                    <section>
+                        <img src="images/illustration-grow-together.svg" alt="grow together">
+                        <div>
+                            <h3>Grow Together</h3>
+                            <p>
+                                Generate meaningful discussions with your audience and build
+                                a strong, loyal community. Think of the insightful conversations
+                                you miss out on with a feedback form.
+                            </p>
+                        </div>
+                    </section>
+                    <section>
+                        <img src="images/illustration-flowing-conversation.svg" alt="flowing conversation">
+                        <div>
+                            <h3>Flowing Conversations</h3>
+                            <p>
+                                You wouldn't paginate a conversation in real life, so why do it
+                                online? Our threads have just-in-time loading for a more natural
+                                flow.
+                            </p>
+                        </div>
+                    </section>
+                    <section>
+                        <img src="images/illustration-your-users.svg" alt="users">
+                        <div>
+                            <h3>Your Users</h3>
+                            <p>
+                                It takes no time at all to integrate Huddle with you app's 
+                                authentication solution. This means, once signed in to your app,
+                                your users can start chatting immediately.
+                            </p>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </article>
+        <section class="section-three">
+            <h3>Ready To Build Your Community?</h3>
+            <button>Get Started For Free</button>
+        </section>
+        <footer>
+            <div><img src="images/logo2.svg" alt="huddle footer's logo"></div>
+            <section>
+                <section>
+                        <div class="footer-icon">
+                            <img src="images/icon-location.svg" alt="location icon">
+                            <div>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua
+                            </div>
+                        </div>
+                        <div class="footer-icon">
+                            <img src="images/icon-phone.svg" alt="phone icon">
+                            <div>+234-813-848-8672</div>
+                        </div>
+                        <div class="footer-icon">
+                            <img src="images/icon-email.svg" alt="email icon">
+                            <div>iwakinomotoye@gmail.com</div>
+                        </div>
+                    </section>
+                    <section class="footer-navlinks">
+                        <div><a href="#AboutUs">About Us</a></div>
+                        <div><a href="#WhatWeDo">What We Do</a></div>
+                        <div><a href="#FAQ">FAQ</a></div>
+                        <div><a href="#Career">Career</a></div>
+                        <div><a href="#Blog">Blog</a></div>
+                        <div><a href="#ContactUs">Contact Us</a></div>
+                    </section>
+                    <section class="socialmedia-links">
+                        <div>
+                            <a href="#twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#instagram"><i class="fab fa-instagram"></i></a> 
+                        </div>
+                        <div class="copyright">&copy; Copyright 2019 Huddle. All rights reserved.</div>
+                    </section>
+            </section>
+        </footer>
+    </main>
+</body>
+<script type="text/javascript" src="huddle.js"></script>
+</html>
