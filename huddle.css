@@ -178,7 +178,7 @@ footer > div img {
 }
 .form {
     position: absolute;
-    top: 10%;
+    top: 0;
     left:  5%;
     width: 90%;
     padding: 50px 20px 30px 20px;
@@ -254,6 +254,7 @@ input {
 }
 @media (min-width: 375px) {
     .form {
+        top: 10%;
         left:  10%;
         width: 80%;
     }
