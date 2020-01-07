@@ -1,3 +1,4 @@
+// for login form display
 const modal = document.getElementById('modal'),
 form = document.getElementById('form'),
 loginBtn = document.getElementById('loginBtn');
@@ -10,6 +11,18 @@ modal.addEventListener('click', e => {
     }
 })
 
+//for signup form display
+const modalSignup = document.getElementById('modalSignup'),
+signupBtn = document.getElementById('signupBtn');
+signupBtn.addEventListener('click', () => {
+    modalSignup.classList.remove('hide');
+});
+modalSignup.addEventListener('click', e => {
+    if(e.target.id == 'modalSignup' | e.target.id == 'cancel') {
+        modalSignup.classList.add('hide');
+    }
+})
+
 //for form validation
 let hideValidationMessage = function() {
     let forEach = Array.prototype.forEach;
@@ -17,23 +30,43 @@ let hideValidationMessage = function() {
     forEach.call(spans, function(span){
                 span.setAttribute('class','hide');
     });
-    document.getElementById('form').checkValidity(); 
+    if(document.getElementById('form')){
+        document.getElementById('form').checkValidity();
+    } else if(document.getElementById('signupForm')){
+        document.getElementById('signupForm').checkValidity();
+    } 
 
 };
 let showMessage = function() {
+    if(this.nextElementSibling) {
         let shows = this.nextElementSibling.querySelectorAll('span[data-rule]');
         forEach.call(shows, function(show) {
             show.classList.remove('hide');
-        })
+        })       
     }
+}
 
 let inputs = document.querySelectorAll('input');
 let forEach = Array.prototype.forEach;
 forEach.call(inputs, function(input) {
     input.onfocus = showMessage;
     input.addEventListener('blur', hideValidationMessage);
-    input.addEventListener('invalid', validateMessage);  
+    input.addEventListener('invalid', validateMessage);
 });
+
+document.getElementById('submit').addEventListener('click', () => {
+    console.log('no');
+    if(document.getElementById('form').checkValidity() == true) {
+        console.log('done');
+            modal.classList.add('hide');
+    }
+})
+document.getElementById('submitSignup').addEventListener('click', () => {
+    if(document.getElementById('signupForm').checkValidity() == true) {
+            modalSignup.classList.add('hide');
+    }
+})
+
 
 function validateMessage(e) {
     if(!e.currentTarget.validity.valid){
