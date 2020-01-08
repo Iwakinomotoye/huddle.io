@@ -14,11 +14,15 @@ modal.addEventListener('click', e => {
 //for signup form display
 const modalSignup = document.getElementById('modalSignup'),
 signupBtn = document.getElementById('signupBtn');
+signupBtn2 = document.getElementById('signupBtn2');
 signupBtn.addEventListener('click', () => {
     modalSignup.classList.remove('hide');
 });
+signupBtn2.addEventListener('click', () => {
+    modalSignup.classList.remove('hide');
+});
 modalSignup.addEventListener('click', e => {
-    if(e.target.id == 'modalSignup' | e.target.id == 'cancel') {
+    if(e.target.id == 'modalSignup' | e.target.id == 'cancel-signup') {
         modalSignup.classList.add('hide');
     }
 })
@@ -55,9 +59,7 @@ forEach.call(inputs, function(input) {
 });
 
 document.getElementById('submit').addEventListener('click', () => {
-    console.log('no');
     if(document.getElementById('form').checkValidity() == true) {
-        console.log('done');
             modal.classList.add('hide');
     }
 })
