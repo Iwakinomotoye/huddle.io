@@ -40,7 +40,7 @@
                             Password field is required.
                         </span>
                     </div>
-                    <label ><input type="checkbox" id="remember">Remember me</label>
+                    <label ><input type="checkbox">Remember me</label>
                     <button type="submit" id="submit">Submit</button>
                     <button id="cancel">Cancel</button>
                     <a href="#forget" class="forget">Forgotten Password?</a>
@@ -48,10 +48,10 @@
         </section>
         <section id="modalSignup" class="modal-login hide">
             <form action="" id="signupForm" class="form" autocomplete="off">
-                <span class="cancel" id="cancel">x</span>
                 <h2>Sign Up</h2>
-                <label for="username">Username:</label>
-                <input type="username" id="username" placeholder="Enter Username"
+                <span class="cancel" id="cancel-signup">x</span>
+                <label for="signup-username">Username:</label>
+                <input type="username" id="signup-username" placeholder="Enter Username"
                 pattern="[a-zA-Z ]{6,}" required>
                 <div class="message">
                     <span data-rule="valueMissing" class="hide">
@@ -71,26 +71,26 @@
                         No special characters or symbols except '.' and '@'.
                     </span>
                 </div>
-                <label for="password">Password:</label>
-                <input type="password" id="password" placeholder="Enter Password"
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" placeholder="Enter Password"
                 required>
                 <div class="message">
                     <span data-rule="valueMissing" class="hide">
                         Password field is required.
                     </span>
                 </div>
-                <label for="password">Confirm Password:</label>
-                <input type="password" id="password" placeholder="Confirm Password"
+                <label for="confirm-signup-password">Confirm Password:</label>
+                <input type="password" id="confirm-signup-password" placeholder="Confirm Password"
                 required>
                 <div class="message">
                     <span data-rule="valueMissing" class="hide">
                         Password field is required.
                     </span>
                 </div>
-                <label ><input type="checkbox" id="remember" required>I agree to the 
+                <label ><input type="checkbox" required>I agree to the 
                     <a href="#term" class="terms">Terms & conditions</a></label>
                 <button type="submit" id="submitSignup">Submit</button>
-                <button id="cancel">Cancel</button>
+                <button id="cancel-signup">Cancel</button>
             </form>
         </section>
         <article>
@@ -102,7 +102,7 @@
                         but so does you audience, Create connections with your users as you 
                         engage in genuine discussions.
                     </p>
-                    <button id="signupBtn">Get Started For Free</button>
+                    <button id="signupBtn2">Get Started For Free</button>
                 </div>
                 <img src="images/illustration-mockups.svg" alt="illustration-mockup">
             </section>
