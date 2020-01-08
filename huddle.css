@@ -177,14 +177,18 @@ footer > div img {
     background: rgba(0, 0, 0, 0.5);
 }
 .form {
+    font-size: 15px;
     position: absolute;
-    top: 0;
+    top: 0%;
     left:  5%;
     width: 90%;
     padding: 50px 20px 30px 20px;
     background: #fff;
     text-align: left;
     border-radius: 10px;
+}
+.form h2 {
+    margin: 0;
 }
 label {
     display: block;
@@ -258,6 +262,9 @@ input {
         left:  10%;
         width: 80%;
     }
+    .form h2 {
+        margin: 10px 0;
+    }
 }
 @media (min-width: 576px) {
     
@@ -275,6 +282,9 @@ input {
     .section-two img {
         width: 50%;
         margin-left: 10%;
+    }
+    .form {
+        font-size: inherit;
     }
 
 }
