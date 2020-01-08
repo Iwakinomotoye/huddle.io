@@ -10,9 +10,6 @@ body {
     font-size: 19px;
 }
 * {
-    /* when you set a particular width, this settings below allows the width to remain intact
-    even if a padding property is added to it, if not, the width would be increased by the
-    padding property that was set to it. */
     box-sizing: border-box;
 }
 h1 {
@@ -187,6 +184,9 @@ footer > div img {
     text-align: left;
     border-radius: 10px;
 }
+#form {
+    top: 15%;
+}
 .form h2 {
     margin: 0;
 }
@@ -258,16 +258,18 @@ input {
 }
 @media (min-width: 375px) {
     .form {
-        top: 10%;
-        left:  10%;
-        width: 80%;
+        top: 1%;
     }
     .form h2 {
         margin: 10px 0;
     }
 }
 @media (min-width: 576px) {
-    
+    .form {
+        top: 2%;
+        left:  10%;
+        width: 80%;
+    }
     .section-two {
         margin-top: 200px;
         text-align: left;
@@ -283,13 +285,11 @@ input {
         width: 50%;
         margin-left: 10%;
     }
-    .form {
-        font-size: inherit;
-    }
 
 }
 @media (min-width: 768px) {
     .form {
+        top: 3%;
         left:  20%;
         width: 60%;
     }
@@ -413,9 +413,12 @@ input {
     }
     /* styling for modal component */
     .form {
-        top: 20%;
+        top: 6%;
         left: 25%;
         width: 50%;
+    }
+    #form {
+        top: 20%;
     }
     .forget {
         width: fit-content;
