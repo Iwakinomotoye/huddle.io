@@ -237,7 +237,7 @@ input {
 .message {
     width: 80%;
     margin-bottom: 10px;
-    color: #555;
+    color: red;
     font-size: 13px;
 }
 .forget {
