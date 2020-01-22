@@ -1,6 +1,6 @@
 // for login form display
 const modal = document.getElementById('modal'),
-form = document.getElementById('form'),
+// form = document.getElementById('form'),
 loginBtn = document.getElementById('loginBtn');
 loginBtn.addEventListener('click', () => {
     modal.classList.remove('hide');
@@ -30,20 +30,30 @@ modalSignup.addEventListener('click', e => {
 //for form validation
 let hideValidationMessage = function() {
     let forEach = Array.prototype.forEach;
-    let spans = document.querySelectorAll('span[data-rule]');
-    forEach.call(spans, function(span){
+    let spans;
+    if(modal.classList.contains('hide')){
+        spans = document.querySelectorAll('#signupForm span[data-rule]');
+        forEach.call(spans, function(span){
                 span.setAttribute('class','hide');
-    });
-    if(document.getElementById('form')){
-        document.getElementById('form').checkValidity();
-    } else if(document.getElementById('signupForm')){
+        });
         document.getElementById('signupForm').checkValidity();
-    } 
-
+    } else if (modalSignup.classList.contains('hide')){
+        spans = document.querySelectorAll('#form span[data-rule]');
+        forEach.call(spans, function(span){
+            span.setAttribute('class','hide');
+        });
+        document.getElementById('form').checkValidity();
+    }
 };
+
 let showMessage = function() {
     if(this.nextElementSibling) {
-        let shows = this.nextElementSibling.querySelectorAll('span[data-rule]');
+        let shows;
+        if(modal.classList.contains('hide')){
+            shows = this.nextElementSibling.querySelectorAll('#signupForm span[data-rule]');
+        } else if (modalSignup.classList.contains('hide')){
+            shows = this.nextElementSibling.querySelectorAll('#form span[data-rule]');
+        }
         forEach.call(shows, function(show) {
             show.classList.remove('hide');
         })       
@@ -57,18 +67,6 @@ forEach.call(inputs, function(input) {
     input.addEventListener('blur', hideValidationMessage);
     input.addEventListener('invalid', validateMessage);
 });
-
-document.getElementById('submit').addEventListener('click', () => {
-    if(document.getElementById('form').checkValidity() == true) {
-            modal.classList.add('hide');
-    }
-})
-document.getElementById('submitSignup').addEventListener('click', () => {
-    if(document.getElementById('signupForm').checkValidity() == true) {
-            modalSignup.classList.add('hide');
-    }
-})
-
 
 function validateMessage(e) {
     if(!e.currentTarget.validity.valid){
