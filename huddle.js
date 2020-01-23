@@ -17,9 +17,11 @@ signupBtn = document.getElementById('signupBtn');
 signupBtn2 = document.getElementById('signupBtn2');
 signupBtn.addEventListener('click', () => {
     modalSignup.classList.remove('hide');
+    adjustViewPosition();
 });
 signupBtn2.addEventListener('click', () => {
     modalSignup.classList.remove('hide');
+    adjustViewPosition();
 });
 modalSignup.addEventListener('click', e => {
     if(e.target.id == 'modalSignup' | e.target.id == 'cancel-signup') {
@@ -27,60 +29,51 @@ modalSignup.addEventListener('click', e => {
     }
 })
 
-//for form validation
-let hideValidationMessage = function() {
-    let forEach = Array.prototype.forEach;
-    let spans;
-    if(modal.classList.contains('hide')){
-        spans = document.querySelectorAll('#signupForm span[data-rule]');
-        forEach.call(spans, function(span){
-                span.setAttribute('class','hide');
-        });
-        document.getElementById('signupForm').checkValidity();
-    } else if (modalSignup.classList.contains('hide')){
-        spans = document.querySelectorAll('#form span[data-rule]');
-        forEach.call(spans, function(span){
-            span.setAttribute('class','hide');
-        });
-        document.getElementById('form').checkValidity();
-    }
-};
+function adjustViewPosition() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
 
-let showMessage = function() {
-    if(this.nextElementSibling) {
-        let shows;
-        if(modal.classList.contains('hide')){
-            shows = this.nextElementSibling.querySelectorAll('#signupForm span[data-rule]');
-        } else if (modalSignup.classList.contains('hide')){
-            shows = this.nextElementSibling.querySelectorAll('#form span[data-rule]');
-        }
+//for form validation
+let showMessage = function(e) {
+    let signupPassword = document.getElementById('signup-password');
+    let confirmPassword = document.getElementById('confirm-password');
+    if(confirmPassword.value != signupPassword.value) {
+        confirmPassword.setCustomValidity('no');
+    } else {
+        confirmPassword.setCustomValidity('');
+    }
+    
+    let shows= e.currentTarget.nextElementSibling.querySelectorAll('span[data-rule]');
+    if(!e.currentTarget.validity.valid) {
         forEach.call(shows, function(show) {
-            show.classList.remove('hide');
+            let rule = show.getAttribute('data-rule');
+            if(e.currentTarget.validity[rule] == true) {
+                let showMessage = e.currentTarget.nextElementSibling.
+                querySelector('[data-rule=' + rule + ']');
+                showMessage.classList.remove('hide');
+            }
         })       
+    } else {
+        forEach.call(shows, function(show) {
+            show.classList.add('hide');
+        })
+    }
+}
+
+function validateMessage(e) {
+    if(!e.currentTarget.validity.valid){
+        let spans= e.currentTarget.nextElementSibling.querySelectorAll('span[data-rule]');
+        forEach.call(spans, function(span) {
+            span.classList.remove('hide');
+        });
+        e.preventDefault();
     }
 }
 
 let inputs = document.querySelectorAll('input');
 let forEach = Array.prototype.forEach;
 forEach.call(inputs, function(input) {
-    input.onfocus = showMessage;
-    input.addEventListener('blur', hideValidationMessage);
+    input.addEventListener('blur', showMessage);
     input.addEventListener('invalid', validateMessage);
 });
-
-function validateMessage(e) {
-    if(!e.currentTarget.validity.valid){
-        let spans = e.currentTarget.nextElementSibling.querySelectorAll('span[data-rule]');
-        forEach.call(spans, function(span) {
-            let validationMessage = span.getAttribute('data-rule');
-            if(e.currentTarget.validity[validationMessage]) {
-                let showMessages = e.currentTarget.nextElementSibling.
-                querySelectorAll('[data-rule=' + validationMessage + ']');
-                forEach.call(showMessages, function(showMessage) {
-                    showMessage.classList.remove('hide');
-                })
-            }
-        });
-        e.preventDefault();
-    }   
-}
