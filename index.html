@@ -22,14 +22,10 @@
                     <span class="cancel" id="cancel">x</span>
                     <h2>Login</h2>
                     <label for="username">Username:</label>
-                    <input type="username" id="username" placeholder="Enter Username"
-                    pattern="[a-zA-Z ]{6,}" required>
+                    <input type="username" id="username" placeholder="Enter Username" required>
                     <div class="message">
                         <span data-rule="valueMissing" class="hide">
                             Username field is required.
-                        </span>
-                        <span data-rule="patternMismatch" class="hide">
-                            Minimum of 6 alphabetical characters.
                         </span>
                     </div>
                     <label for="password">Password:</label>
@@ -42,11 +38,11 @@
                     </div>
                     <label ><input type="checkbox">Remember me</label>
                     <button type="submit" id="submit">Submit</button>
-                    <button id="cancel" type="reset">Cancel</button>
+                    <button type="reset" id="cancel">Cancel</button>
                     <a href="#forget" class="forget">Forgotten Password?</a>
                 </form>
         </section>
-        <section id="modalSignup" class="modal-login hide">
+        <section id="modalSignup" class="modal-signup hide">
             <form action="" id="signupForm" class="form" autocomplete="off">
                 <h2>Sign Up</h2>
                 <span class="cancel" id="cancel-signup">x</span>
@@ -71,6 +67,8 @@
                         No special characters or symbols except '.' and '@'.
                     </span>
                 </div>
+
+
                 <label for="signup-password">Password:</label>
                 <input type="password" id="signup-password" placeholder="Enter Password"
                 required>
@@ -79,18 +77,29 @@
                         Password field is required.
                     </span>
                 </div>
-                <label for="confirm-signup-password">Confirm Password:</label>
-                <input type="password" id="confirm-signup-password" placeholder="Confirm Password"
+                <label for="signup-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" placeholder="Confirm Password"
                 required>
                 <div class="message">
                     <span data-rule="valueMissing" class="hide">
                         Password field is required.
+                    </span>                    
+                    <span data-rule="customError" class="hide">
+                        Must match 'Password' field.
                     </span>
                 </div>
-                <label ><input type="checkbox" required>I agree to the 
-                    <a href="#term" class="terms">Terms & conditions</a></label>
+
+
+                <label class="terms-label">I agree to the <a href="#term" class="terms">Terms & conditions</a></label>
+                <input type="checkbox" required>
+                <div class="message">
+                    <span data-rule="valueMissing" class="hide">
+                        You must agree to the Terms & conditions.
+                    </span>
+                </div>
                 <button type="submit" id="submitSignup">Submit</button>
                 <button id="cancel-signup" type="reset">Cancel</button>
+                <!-- error message for checkbox and confirm password must match -->
             </form>
         </section>
         <article>
@@ -102,7 +111,7 @@
                         but so does you audience, Create connections with your users as you 
                         engage in genuine discussions.
                     </p>
-                    <button id="signupBtn2">Get Started For Free</button>
+                    <button id="signupBtn">Get Started For Free</button>
                 </div>
                 <img src="images/illustration-mockups.svg" alt="illustration-mockup">
             </section>
@@ -145,7 +154,7 @@
         </article>
         <section class="section-three">
             <h3>Ready To Build Your Community?</h3>
-            <button id="signupBtn">Get Started For Free</button>
+            <button id="signupBtn2">Get Started For Free</button>
         </section>
         <footer>
             <div><img src="images/logo2.svg" alt="huddle footer's logo"></div>
