@@ -165,13 +165,20 @@ footer > div img {
     font-size: 13px;
 }
 /* styling for modal component (login form for mobile view) */
+/* html {
+    
+} */
+main {
+    position: relative;
+    height: 100%;
+}
 .modal-signup {
     position: absolute;
     z-index: 1;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 510%;
+    right: 0;
+    bottom: 0;
     background: rgba(0, 0, 0, 0.5);
 }
 .modal-login {
@@ -284,9 +291,6 @@ input {
     }
     .form h2 {
         margin: 10px 0;
-    }
-    .modal-signup {
-        height: 520%;
     }
 }
 @media (min-width: 576px) {
